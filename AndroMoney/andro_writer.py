@@ -1,7 +1,7 @@
 import datetime
 import pandas as pd
 import openpyxl
-from AndroMoney import settings
+import settings
 
 xlsx_file_path = settings.TABLE_FILE_PATH
 xlsx2_file_path = settings.xlsx2_file_path

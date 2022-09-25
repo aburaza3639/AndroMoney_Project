@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-import AndroMoney.andro_fx as andro_fx
-from AndroMoney import settings
+import andro_fx
+import settings
 
 
 class AndroData(object):
