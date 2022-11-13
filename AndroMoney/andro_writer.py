@@ -1,10 +1,10 @@
 import datetime
 import pandas as pd
 import openpyxl
-import settings
+import AndroMoney_Project.AndroMoney.settings
 
-xlsx_file_path = settings.TABLE_FILE_PATH
-xlsx2_file_path = settings.xlsx2_file_path
+xlsx_file_path = AndroMoney_Project.AndroMoney.settings.TABLE_FILE_PATH
+xlsx2_file_path = AndroMoney_Project.AndroMoney.settings.xlsx2_file_path
 
 
 def andro_pivotwriter(pivot_andromoney, df):
