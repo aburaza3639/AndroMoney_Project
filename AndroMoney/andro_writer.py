@@ -1,10 +1,10 @@
 import datetime
 import pandas as pd
 import openpyxl
-import AndroMoney_Project.AndroMoney.settings
+import AndroMoney.settings
 
-xlsx_file_path = AndroMoney_Project.AndroMoney.settings.TABLE_FILE_PATH
-xlsx2_file_path = AndroMoney_Project.AndroMoney.settings.xlsx2_file_path
+xlsx_file_path = AndroMoney.settings.TABLE_FILE_PATH
+xlsx2_file_path = AndroMoney.settings.xlsx2_file_path
 
 
 def andro_pivotwriter(pivot_andromoney, df):
@@ -18,7 +18,7 @@ def andro_excelwriter(pivot_andromoney, start_date=None):
 
 #Retrieve year-date on table to identify new column
     df3=pd.read_excel(xlsx2_file_path, sheet_name="家計簿", skiprows=16, nrows=1, header=None)
-    strd=datetime.datetime.strptime(start_date, "%Y%m%d")
+    strd=datetime.datetime.strptime(start_date, "%Y-%m-%d")
 
     count=0
 

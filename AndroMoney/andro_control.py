@@ -1,5 +1,5 @@
 from AndroMoney.andro_writer import andro_pivotwriter
-from AndroMoney_Project.AndroMoney.andro_data import AndroDataMoney
+from AndroMoney.andro_data import AndroDataMoney
 
 
 def start_andro(start_date, end_date):

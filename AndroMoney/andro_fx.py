@@ -1,9 +1,12 @@
 import pandas_datareader.data as pdr
+import yfinance as yfin
+
+yfin.pdr_override()
 
 
 def get_exchange_rate(pair, start, end):
     selected = f'{pair}=X'
-    df3 = pdr.DataReader(selected, 'yahoo', start, end)
+    df3 = pdr.DataReader(selected, start, end)
     print(f'{selected} : Complete Getting Data')
     return df3
 

@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
-import AndroMoney_Project.AndroMoney.andro_fx
-import AndroMoney_Project.AndroMoney.settings
+import AndroMoney.andro_fx
+import AndroMoney.settings
+import datetime
 
 
 class AndroData(object):
@@ -16,7 +17,7 @@ class AndroData(object):
     @staticmethod
     def get_xlsx_file_path():
 
-        xlsx_file_path = AndroMoney_Project.AndroMoney.settings.xlsx_FILE_PATH
+        xlsx_file_path = AndroMoney.settings.xlsx_FILE_PATH
         return xlsx_file_path
 
 
@@ -45,8 +46,10 @@ class AndroDataMoney(AndroData):
         return pivot_andromoney
 
     def andro_pivot_get_fx(self):
+        std = self.start_date[:4] + '-' + self.start_date[4:6] + '-' + self.start_date[6:]
+        edd = self.end_date[:4] + '-' + self.end_date[4:6] + '-' + self.end_date[6:]
         pivot_andromoney = self.andro_pivot_get()
-        fx = AndroMoney_Project.AndroMoney.andro_fx.return_fx(self.start_date, self.end_date)
+        fx = AndroMoney.andro_fx.return_fx(std, edd)
         pivot_andromoney['sum'] = pivot_andromoney['HKD'] / fx[1] + pivot_andromoney['JPY'] / fx[0] + pivot_andromoney[
             'SGD']
         pivot_andromoney = pivot_andromoney.round(2)
