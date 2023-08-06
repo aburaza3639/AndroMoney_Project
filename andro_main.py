@@ -9,8 +9,8 @@ start_date = args.start
 end_date = args.end
 """
 
-start_date= "20221201"
-end_date= "20221231"
+start_date= "20230701"
+end_date= "20230731"
 
 
 def func(start_date, end_date):
