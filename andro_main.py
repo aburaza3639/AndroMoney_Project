@@ -1,5 +1,5 @@
-import AndroMoney.andro_control
-
+from AndroMoney import andro_control
+import sys
 """
 parser = argparse.ArgumentParser(description='Input money diary')
 parser.add_argument('start', metavar="start", type=str, help='start date of money diary input')
@@ -9,13 +9,15 @@ start_date = args.start
 end_date = args.end
 """
 
-start_date= "20230701"
-end_date= "20230731"
-
+args = sys.argv
+if args[1].isdigit():
+    if args[2].isdigit():
+        start_date= args[1]
+        end_date= args[2]
 
 def func(start_date, end_date):
 
-    AndroMoney.andro_control.start_andro(start_date, end_date)
+    andro_control.start_andro(start_date, end_date)
 
 
 if __name__ == '__main__':
