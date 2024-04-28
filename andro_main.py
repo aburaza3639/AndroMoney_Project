@@ -8,12 +8,15 @@ args = parser.parse_args()
 start_date = args.start
 end_date = args.end
 """
-
-args = sys.argv
-if args[1].isdigit():
-    if args[2].isdigit():
-        start_date= args[1]
-        end_date= args[2]
+try:
+    args = sys.argv
+    if args[1].isdigit():
+        if args[2].isdigit():
+            start_date = args[1]
+            end_date = args[2]
+except IndexError:
+    start_date = "20240301"
+    end_date = "20240331"
 
 def func(start_date, end_date):
 
